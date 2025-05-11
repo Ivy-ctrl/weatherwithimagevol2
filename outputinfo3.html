@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head><title>Weather Results</title></head>
+<style>
+
+body {
+    background-color: #FFB6C1;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+h2 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 20px;
+    color: #333;
+}
+
+a {
+    margin-top: 20px;
+    font-size: 18px;
+}
+
+a:hover {
+    color: #FF1493;
+}
+
+img {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    margin-top: 20px;
+    border-radius: 8px;
+}
+</style>
+<body>
+    <h2>Weather in {{ city }}</h2>
+
+    {% if weather.error %}
+        <p>Error: {{ weather.error }}</p>
+    {% else %}
+        <p>Currently there is: {{ weather.description }}</p>
+        <p>Temperature: {{ weather.temperature }}°C</p>
+    {% endif %}
+
+    {% if image_url %}
+    <img src="{{ image_url }}" alt="Image of {{ city }}" style="width: 100%; max-width: 600px; height: auto; margin-top: 20px;">
+    {% else %}
+        <p>No image available.</p>
+    {% endif %}
+
+    <a href="{{ url_for('index') }}">Check another city</a>
+</body>
+</html>

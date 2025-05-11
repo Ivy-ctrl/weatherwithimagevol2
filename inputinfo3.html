@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head><title>Weather Input</title></head>
+<style>
+body {
+    background-color: #FFB6C1;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 20px;
+    }
+
+h2 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+form{
+    background-color: #fff;
+    display: inline-block;
+    border-radius: 8px;
+    margin: 20px 0;
+    padding: 15px;
+}
+label {
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+button{
+    background-color: #FF69B4;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 4px;
+}
+
+
+button:hover {
+    background-color: #FF1493;
+}
+input{
+      font-size: 20px;
+      padding: 10px;
+}
+
+.heart-line {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 50px;
+}
+.heart-line svg:hover {
+    transform: scale(1.2);
+}
+</style>
+<body>
+    <h2>Check Weather</h2>
+    <form action="{{ url_for('getweather') }}" method="post">
+        <label for="city">City:</label>
+        <input type="text" id="city" name="city" placeholder="e.g. Riga">
+        <button type="submit">Get Weather</button>
+    </form>
+
+<div class="heart-line">
+        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16">
+          <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15"/>
+        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16">
+          <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15"/>
+        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16">
+          <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15"/>
+        </svg>
+      </div>
+</body>
+</html>
